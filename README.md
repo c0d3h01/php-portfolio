@@ -5,6 +5,16 @@ Showcases projects, skills, and contact information in a modern.
 
 ---
 
+## Home Page
+
+<!-- ![Home](images/home.png)   -->
+
+<div align="center">
+  <img src="images/home.png" alt="Home" width="600">
+</div>
+
+---
+
 ## Requirements
 
 - PHP 7.4+ (or newer)
@@ -43,4 +53,4 @@ php -S localhost:8000
 
 ## License
 
-This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
+**This project is licensed under the** [MIT License](LICENSE)
