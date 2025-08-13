@@ -6,7 +6,8 @@
   env.GREET = "devenv";
   git-hooks.hooks.shellcheck.enable = true;
   languages.javascript.enable = true;
-  packages = [pkgs.nodePackages_latest.vercel];
+  packages = with pkgs; [ ];
+  
   languages.php = {
     enable = true;
     version = "8.2";
