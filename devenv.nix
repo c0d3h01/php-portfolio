@@ -1,9 +1,12 @@
-{ config, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   env.GREET = "devenv";
   git-hooks.hooks.shellcheck.enable = true;
-
+  languages.javascript.enable = true;
+  packages = [pkgs.nodePackages_latest.vercel];
   languages.php = {
     enable = true;
     version = "8.2";
