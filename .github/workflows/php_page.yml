@@ -1,0 +1,71 @@
+name: Deploy PHP site to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      DOCROOT: .
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "8.2"
+
+      - name: Start PHP built-in server
+        run: |
+          php -S 127.0.0.1:8000 -t "$DOCROOT" > /dev/null 2>&1 &
+          for i in {1..20}; do
+            if curl -sSf http://127.0.0.1:8000/ > /dev/null; then
+              echo "Server is up"
+              break
+            fi
+            echo "Waiting for server..."
+            sleep 1
+          done
+
+      - name: Prerender site to static files
+        run: |
+          mkdir -p dist
+          wget \
+            --mirror \
+            --page-requisites \
+            --adjust-extension \
+            --convert-links \
+            --no-parent \
+            --no-host-directories \
+            --directory-prefix=dist \
+            http://127.0.0.1:8000/
+          touch dist/.nojekyll
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
