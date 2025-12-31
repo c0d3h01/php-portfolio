@@ -2,10 +2,6 @@
     <nav class="container">
         <a href="?section=home" class="logo"><?= htmlspecialchars($developer['name']) ?></a>
 
-        <button class="menu-toggle" aria-label="Toggle Menu">
-            <i class="fa fa-bars"></i>
-        </button>
-
         <ul class="nav-links">
             <?php
             $navItems = [
