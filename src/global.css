@@ -590,14 +590,14 @@ footer {
   align-items: center;
   justify-content: center;
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
   text-decoration: none;
 }
 
 .social-links a:hover {
   color: #667eea;
   background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-5px);
+  transform: translateY(-3px);
 }
 
 footer p {
@@ -692,30 +692,30 @@ footer p {
 
 /* Hamburgur Testing */
 .menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: white; /* Adjust to match your header theme */
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white; /* Adjust to match your header theme */
 }
 
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        background: #111; /* or match your header bg */
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 200px;
-        padding: 1rem;
-        border-radius: 8px;
-    }
-    .nav-links.show {
-        display: flex;
-    }
-    .menu-toggle {
-        display: block;
-    }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #111; /* or match your header bg */
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .menu-toggle {
+    display: block;
+  }
 }

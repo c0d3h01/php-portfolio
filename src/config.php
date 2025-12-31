@@ -18,7 +18,6 @@ $skills = [
     'Backend' => ['PHP', 'Node.js', 'Python', 'Rust'],
     'Database' => ['MySQL', 'PostgreSQL', 'MongoDB'],
     'DevOps' => ['Docker', 'Nix', 'CI/CD', 'Linux', 'Nginx'],
-    'Tools' => ['Git', 'VS Code', 'Jetbrains', 'Postman']
 ];
 
 $projects = [
@@ -52,6 +51,30 @@ $experience = [
     [
         'position' => 'Junior Developer',
         'company' => 'X | X.com',
+        'duration' => '2022 - 2023',
+        'description' => 'Started career focusing on backend system development and gradually expanded to full-stack development.',
+        'achievements' => [
+            'Completed 20+ projects',
+            'Learned 5 new technologies',
+            'Received excellence award'
+        ]
+    ],
+
+    [
+        'position' => 'Junior Developer',
+        'company' => 'X | X.com',
+        'duration' => '2023 - 2024',
+        'description' => 'Started career focusing on backend system development and gradually expanded to full-stack development.',
+        'achievements' => [
+            'Completed 20+ projects',
+            'Learned 5 new technologies',
+            'Received excellence award'
+        ]
+    ],
+
+    [
+        'position' => 'Junior Developer',
+        'company' => 'X | X.com',
         'duration' => '2024 - present',
         'description' => 'Started career focusing on backend system development and gradually expanded to full-stack development.',
         'achievements' => [
@@ -59,7 +82,7 @@ $experience = [
             'Learned 5 new technologies',
             'Received excellence award'
         ]
-    ]
+    ],
 ];
 
 // Handle contact form submission
@@ -80,4 +103,3 @@ if ($_POST) {
 
 // Get current page section
 $section = $_GET['section'] ?? 'home';
-?>
